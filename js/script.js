@@ -22,7 +22,8 @@ function showArea() {
         document.getElementById('calculatorArea').innerHTML = `
 		<span class="spanOverThing">Calculator</span>
 		<br/>
-		<code>A = <input type="number" title="Square Area Input" id="squareAreaInput" onChange="calculateSquareArea()"/><sup>2</sup></code>
+		<code>Side = <input type="number" title="Square Area Input" id="squareAreaInput" onChange="calculateSquareArea()"/>
+		</code>
 		<br/>
 		<code id="squareAreaAnswer"></code>
 		`;
@@ -43,7 +44,7 @@ function showArea() {
             document.getElementById('calculatorArea').innerHTML = `
 			<span class="spanOverThing">Calculator</span>
 			<br/>
-			<code>A = <input type="number" title="Square Area Input" id="squareAreaInput" onChange="calculateSquareArea()"/><sup>2</sup></code>
+			<code>Side = <input type="number" title="Square Area Input" id="squareAreaInput" onChange="calculateSquareArea()"/></code>
 			<br/>
 			<code id="squareAreaAnswer"></code>
 			`;
@@ -60,9 +61,11 @@ function showArea() {
 			<span class="spanOverThing">Calculator</span>
 			<br/>
 
-			<code>A = 
+			<code>
+			Base = 
 			<input type="number" id="parallelogramAreaInputBaseLength" title="Parallelogram Area Input - Base Length" onChange="calculateParallelogramArea()" />
-			&times
+			<br/>
+			Height = 
 			<input type="number" id="parallelogramAreaInputHeight" title="Parallelogram Area Input- Height" onChange="calculateParallelogramArea()" />
 			</code>
 			<br/>
@@ -81,11 +84,11 @@ function showArea() {
 			<span class="spanOverThing">Calculator</span>
 			<br/>
 
-			<code>A =
+			<code>Base =
 			<input type="number" id="triangleAreaHeight" title="Triangle Area Input - Height" onChange="calculateTriangleArea()" />
-			&times
-			<input type="number" id="triangleAreaBaseLength" title="Triangle Area Input - Base Length" onChange="calculateTriangleArea()" />
-			&divide 2</code>
+			<br/>
+			Height =
+			<input type="number" id="triangleAreaBaseLength" title="Triangle Area Input - Base Length" onChange="calculateTriangleArea()" /></code>
 
 			<br/>
 
@@ -102,9 +105,8 @@ function showArea() {
             document.getElementById('calculatorArea').innerHTML = `
 			<span class="spanOverThing">Calculator</span>
 			<br/>
-			<code>A = &pi; &times
+			<code>Radius =
 			<input type="number" id="circleAreaInput" title="Circle Area Input" onChange="calculateCircleArea()" />
-			<sup>2</sup>
 			</code>
 			<br/>
 			<code id="circleAreaAnswer"></code>
@@ -116,8 +118,7 @@ function showArea() {
             and if I add it, it may cause debug issues later.
 		*/
     }
-}
-;//For calculating areas of choices above
+};//For calculating areas of choices above
 
 function calculateSquareArea() {
     var squareAreaInput = document.getElementById('squareAreaInput').value;
@@ -160,7 +161,7 @@ function showPerimeter() {
         document.getElementById('calculatorArea').innerHTML = `
 		<span class="spanOverThing">Calculator</span>
 		<br/>
-		<code>A = 4 &times
+		<code>Side =
 		<input type="number" title="Square Perimeter Input" id="squarePerimeterInput" onChange="calculateSquarePerimeter()" />
 		</code>
 		<br/>
@@ -182,7 +183,7 @@ function getPerimeterOption() {
             document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>P = 4 &times
+				<code>Side =
 				<input type="number" title="Square Perimeter Input" id="squarePerimeterInput" onChange="calculateSquarePerimeter()" />
 				</code>
 				<br/>
@@ -199,11 +200,11 @@ function getPerimeterOption() {
             document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>P = 2 &times ( 
+				<code>Length =
 				<input title="Parallelogram Perimeter Input - Length" id="parallelogramPerimeterLengthInput" onChange="calculateParallelogramPerimeter()" />
-				+
+				<br/>
+				Height =
 				<input title="Parallelogram Perimeter Input - Height" id="parallelogramPerimeterHeightInput" onChange="calculateParallelogramPerimeter()" />
-				)
 				</code>
 				<br/>
 				<code id="parallelogramPerimeterAnswer"></code>
@@ -219,7 +220,7 @@ function getPerimeterOption() {
             document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>P = &pi; &times
+				<code>Radius =
 				<input type="number" id="circumferenceInput" onChange="calculateCircumference()" title="Circumference Input" />
 				</code>
 				<br/>
@@ -285,9 +286,8 @@ function showVolume() {
         document.getElementById('calculatorArea').innerHTML = `
 		<span class="spanOverThing">Calculator</span>
 		<br/>
-		<code>A = 
+		<code>Side = 
 		<input type="number" title="Cube Volume Input" id="cubeVolumeInput" onChange="calculateCubeVolume()" />
-		<sup>3</sup>
 		</code>
 		<br/>
 		<code id="cubeVolumeAnswer"></code>
@@ -308,9 +308,8 @@ function getVolumeOption() {
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>A = 
+				<code>Side =
 				<input type="number" title="Cube Volume Input" id="cubeVolumeInput" onChange="calculateCubeVolume()" />
-				<sup>3</sup>
 				</code>
 				<br/>
 				<code id="cubeVolumeAnswer"></code>
@@ -326,13 +325,14 @@ function getVolumeOption() {
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>A = 
+				<code>Length
 				<input type="number" title="Rectangular Prism Volume Input - Length" id="rectangularPrismVolumeLength" onChange="calculateRectangularPrismVolume()" />
-				&times
+				<br/>
+				Width =
 				<input type="number" title="Rectangular Prism Volume Input - Width" id="rectangularPrismVolumeInputWidth" onChange="calculateRectangularPrismVolume()" />
-				&times
+				<br/>
+				Height =
 				<input type="number" title="Rectangular Prism Volume Input - Height" id="rectangularPrismVolumeInputHeight" onChange="calculateRectangularPrismVolume()" />
-				
 				</code>
 				<br/>
 				<code id="rectangularPrismVolumeAnswer"></code>
@@ -348,11 +348,11 @@ function getVolumeOption() {
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>A = &pi; &times 
+				<code>Radius =
 				<input type="number" title="Cone Volume Input - Radius" id="coneVolumeInputRadius" onChange="calculateConeVolume()" />
-				<sup>2</sup>
-				&times;
-				<input type="number" title="Cone Volume Input - Slope Height" id="coneVolumeInputSlantHeight" onChange="calculateConeVolume()" />				
+				<br/>
+				Slant Height =
+				<input type="number" title="Cone Volume Input - Slant Height" id="coneVolumeInputSlantHeight" onChange="calculateConeVolume()" />				
 				</code>
 				<br/>
 				<code id="coneVolumeAnswer"></code>
@@ -368,10 +368,10 @@ function getVolumeOption() {
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>A = &pi; &times
+				<code>Radius =
 				<input type="number" title="Cylinder Volume Input - Radius" id="cylinderVolumeInputRadius" onChange="calculateCylinderVolume()" />
-				<sup>2</sup>
-				&times;
+				<br/>
+				Height =
 				<input type="number" title="Cylinder Volume Input - Height" id="cylinderVolumeInputHeight" onChange="calculateCylinderVolume()" />				
 				</code>
 				<br/>
@@ -388,9 +388,8 @@ function getVolumeOption() {
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>A = 4/3 &times &pi; &times 
+				<code>Radius =
 				<input type="number" title="Sphere Volume Input" id="sphereVolumeInput" onChange="calculateSphereVolume()" />
-				<sup>3</sup>
 				</code>
 				<br/>
 				<code id="sphereVolumeAnswer"></code>
@@ -451,9 +450,8 @@ function showSurfaceArea() {
         document.getElementById('calculatorArea').innerHTML = `
 		<span class="spanOverThing">Calculator</span>
 		<br/>
-		<code>S.A. = 6 &times
+		<code>Side =
 		<input type="number" title="Cube Surface Area Input" id="cubeSurfaceAreaInput" onChange="calculateCubeSurfaceArea()" />
-		<sup>2</sup>
 		</code>
 		<br/>
 		<code id="cubeSurfaceAreaAnswer"></code>
@@ -474,9 +472,8 @@ function getSurfaceAreaOption() {
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
 				<br/>
-				<code>S.A. = 6 &times
+				<code>Side =
 				<input type="number" title="Cube Surface Area Input" id="cubeSurfaceAreaInput" onChange="calculateCubeSurfaceArea()" />
-				<sup>2</sup>
 				</code>
 				<br/>
 				<code id="cubeSurfaceAreaAnswer"></code>
@@ -522,7 +519,7 @@ function getSurfaceAreaOption() {
 					Radius = 
 					<input type="number" title="Cone Surface Area Input - Radius" id="coneSurfaceAreaInputRadius" onChange="calculateConeSurfaceArea()" />
 					<br/>
-					Slant height = 
+					Slant Height = 
 					<input type="number" title="Cone Surface Area Input - Slant Height" id="coneSurfaceAreaInputSlantHeight" onChange="calculateConeSurfaceArea()" />
 				</code>
 				<br/>
@@ -560,9 +557,9 @@ function getSurfaceAreaOption() {
 				`;
 				document.getElementById('calculatorArea').innerHTML = `
 				<span class="spanOverThing">Calculator</span>
-				<code>S.A. = 4 &times &pi; &times 
+				<br/>
+				<code>Radius =
 				<input type="number" title="Sphere Surface Area Input" id="sphereSurfaceAreaInput" onChange="calculateSphereSurfaceArea()"/>
-				<sup>2</sup>
 				<br/>
 				<code id="sphereSurfaceAreaAnswer"></code>
 				`;
@@ -637,11 +634,13 @@ function showMisc() {
 		</select>
 		<br/>
 		<div id="pythagoreanTheoremCalculator">
-			<code>a<sup>2</sup> +
+			<code>
+			b =
 			<input type="number" title="Pythagorean Theorem Input - b" id="pythagoreanTheoremInputB" onChange="calculatePythagoreanTheorem('a')" />
-			<sup>2</sup> =
+			<br/>
+			c =
 			<input type="number" title="Pythagorean Theorem Input - c" id="pythagoreanTheoremInputC" onChange="calculatePythagoreanTheorem('a')" />
-			<sup>2</sup></code>
+			</code>
 			<br/>
 			<code id="pythagoreanTheoremAnswer"></code>
 		</div>
@@ -676,9 +675,11 @@ function getMiscOption() {
 				</select>
 				<br/>
 				<div id="pythagoreanTheoremCalculator">
-					<code>a<sup>2</sup> +
+					<code>
+					b =
 					<input type="number" title="Pythagorean Theorem Input - b" id="pythagoreanTheoremInputB" onChange="calculatePythagoreanTheorem('a')" />
-					<sup>2</sup> =
+					<br/>
+					c =
 					<input type="number" title="Pythagorean Theorem Input - c" id="pythagoreanTheoremInputC" onChange="calculatePythagoreanTheorem('a')" />
 					<sup>2</sup></code>
 					<br/>
@@ -720,9 +721,11 @@ function getPythagoreanTheoremOption() {
 		case 'a':
 			{
 				document.getElementById('pythagoreanTheoremCalculator').innerHTML = `
-				<code>a<sup>2</sup> +
+				<code>
+				b =
 				<input type="number" title="Pythagorean Theorem Input - b" id="pythagoreanTheoremInputB" onChange="calculatePythagoreanTheorem('a')" />
-				<sup>2</sup> =
+				<br/>
+				c =
 				<input type="number" title="Pythagorean Theorem Input - c" id="pythagoreanTheoremInputC" onChange="calculatePythagoreanTheorem('a')" />
 				<sup>2</sup></code>
 				<br/>
@@ -733,11 +736,12 @@ function getPythagoreanTheoremOption() {
 		case 'b':
 			{
 				document.getElementById('pythagoreanTheoremCalculator').innerHTML = `
-				<code><input type="number" title="Pythagorean Theorem Input - a" id="pythagoreanTheoremInputA" onChange="calculatePythagoreanTheorem('b')" />
-				<sup>2</sup> +
-				b<sup>2</sup> =
-				<input type="number" title="Pythagorean Theorem Input - c" id="pythagoreanTheoremInputC" onChange="calculatePythagoreanTheorem('b')" />
-				<sup>2</sup></code>
+				<code>
+				a =
+				<input type="number" title="Pythagorean Theorem Input - a" id="pythagoreanTheoremInputA" onChange="calculatePythagoreanTheorem('b')" />
+				<br/>
+				c =
+				<input type="number" title="Pythagorean Theorem Input - c" id="pythagoreanTheoremInputC" onChange="calculatePythagoreanTheorem('b')" /></code>
 				<br/>
 				<code id="pythagoreanTheoremAnswer"></code>
 				`;
@@ -746,11 +750,12 @@ function getPythagoreanTheoremOption() {
 		case 'c':
 			{
 				document.getElementById('pythagoreanTheoremCalculator').innerHTML = `
-				<code><input type="number" title="Pythagorean Theorem Input - a" id="pythagoreanTheoremInputA" onChange="calculatePythagoreanTheorem('c')" />
-				<sup>2</sup> +
+				<code>
+				a =
+				<input type="number" title="Pythagorean Theorem Input - a" id="pythagoreanTheoremInputA" onChange="calculatePythagoreanTheorem('c')" />
+				<br/>
+				b =
 				<input type="number" title="Pythagorean Theorem Input - b" id="pythagoreanTheoremInputB" onChange="calculatePythagoreanTheorem('c')" />
-				<sup>2</sup> =
-				b<sup>2</sup>
 				</code>
 				<br/>
 				<code id="pythagoreanTheoremAnswer"></code>
